@@ -7,11 +7,15 @@ from PIL import Image
 import io
 import json
 import time
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 
-SUPABASE_URL = "your url "
-SUPABASE_KEY = "key"
-BUCKET_NAME = "media"
+SUPABASE_URL = os.environ["SUPABASE_URL"]
+SUPABASE_KEY = os.environ["SUPABASE_KEY"]
+BUCKET_NAME = os.getenv("SUPABASE_BUCKET", "media")
 
 
 # Initialize Supabase client
